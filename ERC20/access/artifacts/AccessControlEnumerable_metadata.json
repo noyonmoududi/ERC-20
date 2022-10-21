@@ -1,0 +1,362 @@
+{
+	"compiler": {
+		"version": "0.8.11+commit.d7f03943"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "previousAdminRole",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "newAdminRole",
+						"type": "bytes32"
+					}
+				],
+				"name": "RoleAdminChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "RoleGranted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "RoleRevoked",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DEFAULT_ADMIN_ROLE",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					}
+				],
+				"name": "getRoleAdmin",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getRoleMember",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					}
+				],
+				"name": "getRoleMemberCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "grantRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "hasRole",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "revokeRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Extension of {AccessControl} that allows enumerating the members of each role.",
+			"kind": "dev",
+			"methods": {
+				"getRoleAdmin(bytes32)": {
+					"details": "Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}."
+				},
+				"getRoleMember(bytes32,uint256)": {
+					"details": "Returns one of the accounts that have `role`. `index` must be a value between 0 and {getRoleMemberCount}, non-inclusive. Role bearers are not sorted in any particular way, and their ordering may change at any point. WARNING: When using {getRoleMember} and {getRoleMemberCount}, make sure you perform all queries on the same block. See the following https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post] for more information."
+				},
+				"getRoleMemberCount(bytes32)": {
+					"details": "Returns the number of accounts that have `role`. Can be used together with {getRoleMember} to enumerate all bearers of a role."
+				},
+				"grantRole(bytes32,address)": {
+					"details": "Overload {grantRole} to track enumerable memberships"
+				},
+				"hasRole(bytes32,address)": {
+					"details": "Returns `true` if `account` has been granted `role`."
+				},
+				"revokeRole(bytes32,address)": {
+					"details": "Overload {revokeRole} to track enumerable memberships"
+				},
+				"supportsInterface(bytes4)": {
+					"details": "See {IERC165-supportsInterface}."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ERC20/access/AccessControlEnumerable.sol": "AccessControlEnumerable"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ERC20/access/AccessControl.sol": {
+			"keccak256": "0x8e1450e8ca0c07441f3a3e5a79f3269059fba944065e68e47243f63f7bc317ac",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://85f64f29ab892ce688a8c9cf428fc3776ca409ce43b94a8fef959dc726cc7f42",
+				"dweb:/ipfs/QmPfbetW6n5WGrv3ZEX7YXFjr3bcpnrJJyatCUdt9r9k1V"
+			]
+		},
+		"ERC20/access/AccessControlEnumerable.sol": {
+			"keccak256": "0xae929d11d84e49968e28df2e34ebbe3d79694007d0c9c28fd395e2cbcc9b5d30",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b6ff039bc616652cc796f9111305368dbdf29cb0af59478f45e756b3a11d72de",
+				"dweb:/ipfs/QmUjUTXCckfVQqQRm1TxQHq45vZyWPpLCVDXaEk8b8TRYP"
+			]
+		},
+		"ERC20/access/IAccessControl.sol": {
+			"keccak256": "0x334dbfcb5b0ef61686f14ccf0cabf41666c46f2445f1a0525d15c3806b84b10a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://abd7910d477d71898c503bec4a5a9126e2a5aeb6af81a720a8f6871e049c270e",
+				"dweb:/ipfs/QmbPtbvLypAY3WFyt9DeUUeR7aeo6iY55KAKocbXvz4F3Q"
+			]
+		},
+		"ERC20/access/IAccessControlEnumerable.sol": {
+			"keccak256": "0x853b1ef3dbc3ea84031b152f8fe16eb3ebb4b7390e1d22a693fd35e208af18ef",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://54d94188708f9e8cf1e5d2535c70e1107ea7be1f1a6689b71b67919737b5ac58",
+				"dweb:/ipfs/Qme7Gnk6xYKTaEkRGGa8DYWp4wqgF66Ysj3GNrcFqAm5F1"
+			]
+		},
+		"ERC20/utils/Context.sol": {
+			"keccak256": "0x2e2ac762cc60af55c199a4926f4c360aa00cec4af6dfed7475fc866353ea6c58",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://98f72b227c30903022ee8a898b55dacbbcc73d633e10022edcaeea61e4ef312e",
+				"dweb:/ipfs/QmedXrqXE7r6Pazs4aBfwDJNPdiw25ovisBiWZ3EACFQFh"
+			]
+		},
+		"ERC20/utils/Strings.sol": {
+			"keccak256": "0xf1d4a1306f61d74dd46dbb85fda4613b4238bd57df381e6768a660b08bfcceab",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://167cfa4f1dcdc7e263b9ee9761974a1d6e526cc2ef0c05e340c393fae0ad1204",
+				"dweb:/ipfs/Qmc91NDjbXBTAb5fjvWY2htcKhjjw2Zgdwq6Z9TRsYMZ6M"
+			]
+		},
+		"ERC20/utils/introspection/ERC165.sol": {
+			"keccak256": "0x071cfd008ed1810ddf23f56bd1ce2f0c3983bc291559067e94618547f579e1f2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a3235dc4cbf8fe1bde8426a0515c2d19205953cce2bef84e635a74b1b0140250",
+				"dweb:/ipfs/QmcLniP23L9VH3rSdoE4YnLosayZELS38z6HJCZQ3Q4Vq2"
+			]
+		},
+		"ERC20/utils/introspection/IERC165.sol": {
+			"keccak256": "0x7e30ce048ac2ce3cc97d725487ed5a82192bb939456f46e0cbe38f1b48644f9e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://93406f5266094615e2b829d0eb4a3a668c72a3a6562da91a9ea9044cd001dd80",
+				"dweb:/ipfs/QmUqT5ZLn5HTvE4Bas9BA5RSCamz4p3KwbvEsNvNJ2taav"
+			]
+		},
+		"ERC20/utils/structs/EnumerableSet.sol": {
+			"keccak256": "0xb42f52f374372121b2f84f4b26c3e652885e4e9ee0dad6526ce363cde9d8095b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5586e75c4afa8c081e128dc59da45a0a8b26ca4ace8671ee618621b52ae8cc75",
+				"dweb:/ipfs/QmUTHNq6guEirh74EB8W2CKp1xE35iQQg6N8U83xfWwoum"
+			]
+		}
+	},
+	"version": 1
+}
